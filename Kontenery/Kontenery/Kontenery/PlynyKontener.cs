@@ -16,7 +16,7 @@ public class PlynyKontener : Kontener, IHazardNotifier
     {
         if (NiebezpiecznyLadunek)
         {
-            if (masaLadunku > 0.5 * MaksymalnaLadownosc)
+            if (masaLadunku > 0.5 * MaksymalnaLadownosc || MasaLadunku != 0)
                 throw new OverfillException(informacjaTekstowa());
             else
             {
@@ -25,11 +25,16 @@ public class PlynyKontener : Kontener, IHazardNotifier
         }
         else
         {
-            if (masaLadunku > MaksymalnaLadownosc * 0.9)
+            if (masaLadunku > MaksymalnaLadownosc * 0.9 || MasaLadunku != 0)
             {
                 throw new OverfillException(informacjaTekstowa());
             } 
         }
+    }
+
+    public override void oproznij()
+    {
+        base.oproznij();
     }
 
     public string informacjaTekstowa()

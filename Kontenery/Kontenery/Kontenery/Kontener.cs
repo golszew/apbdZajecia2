@@ -32,7 +32,7 @@ public abstract class Kontener : IKontener
 
     public virtual void oproznij()
     {
-        throw new NotImplementedException();
+        MasaLadunku = 0;
     }
 
     public virtual void zaladuj(int masaLadunku)
