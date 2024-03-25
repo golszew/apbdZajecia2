@@ -42,4 +42,21 @@ public abstract class Kontener : IKontener
         MasaLadunku = masaLadunku;
         
     }
+
+    public override bool Equals(object? obj)
+    {
+        if (obj == null || GetType() != obj.GetType())
+            return false;
+
+        Kontener kontener = (Kontener)obj;
+
+        return NumerSeryjny.kod.Equals(kontener.NumerSeryjny.kod);
+    }
+
+    public override string ToString()
+    {
+        return "(Masa ladunku=" + MasaLadunku + ", Wysokosc=" + ", Waga wlasna=" + WagaWlasna +
+               ", Glebokosc=" + Glebokosc + ", Numer Seryjny=" + NumerSeryjny.kod + ", Maksymalna Ladownosc=" +
+               MaksymalnaLadownosc + ")";
+    }
 }

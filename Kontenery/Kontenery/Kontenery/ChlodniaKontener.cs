@@ -15,7 +15,7 @@ public class ChlodniaKontener : Kontener
 
     public void zaladuj(int masaLadunku, Rodzaj_Produktu rodzajProduktu)
     {
-        if(masaLadunku + MasaLadunku>MaksymalnaLadownosc || RodzajProduktu != rodzajProduktu || (int)rodzajProduktu<(int)RodzajProduktu )
+        if(masaLadunku + MasaLadunku>MaksymalnaLadownosc || RodzajProduktu != rodzajProduktu || (int)rodzajProduktu<(int)RodzajProduktu)
             Console.WriteLine("Operacja nie moze zostac zrealizowana");
         else
         {
